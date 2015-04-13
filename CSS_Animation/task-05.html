@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Animation, Transitions, Transforms</title>
+  <link media="all" rel="stylesheet" href="css/basicstyles/bootstrap.css">
+  <link media="all" rel="stylesheet" href="css/basicstyles/all.css">
+  <link media="all" rel="stylesheet" href="css/task-05.css">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+<!-- wrapper -->
+<div id="wrapper">
+  <!-- header -->
+  <header>
+    <h1>Animations</h1>
+  </header>
+  <!-- main -->
+  <div id="main">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h2 class="panel-title">Task #5</h2>
+      </div>
+      <div class="panel-body">
+        <h3>Description:</h3>
+        <p>Implement 2 animations use transforms and @keyframes. The img (.anim-img) should rotated infinity.</p>
+        <ul>
+          <li>- .anim-img - should be rotated all time;</li>
+          <li>- .logo-picture - should be zoomed from center of the (.anim-img) one time with delay 2 seconds.</li>
+        </ul>
+        <code>
+          keyframes
+        </code>
+        <p class="text-success">Please take a look for arrow on image - direction. And example for  image zooming.</p>
+        <p class="text-warning">Result:</p>
+        <div class="example-result" style="text-align: center; position:relative;">
+          <img src="images/arrow_circle_right.png" style="width:30px; height:30px; position:absolute; top:50%; left:50%; margin: -15px 0 0 -15px; z-index:99;">
+          <img src="images/rays.png" style="width:150px; height:150px">
+        </div>
+        <p class="text-warning">Example animations:</p>
+        <div class="example-result" style="text-align: center; position:relative;">
+          <img src="images/anim1.gif" style="width:170px; height:150px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="separator"></span>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Your Solution</h3>
+    </div>
+    <div class="panel-body">
+      <div class="anim-container">
+        <img class="logo-picture" src="images/rocket.png" width="100px" height="100px">
+        <img class="anim-img" src="images/rays.png" width="600px" height="600px">
+      </div>
+    </div>
+  </div>
+  <footer>
+    <!-- there will be footer -->
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+This task is not done.
+
+You should have implement a crossbrowser solution.
+You wrote only for webkit, it's wrong.
+
+Also you always should write a fallback background color for that browsers that does not support gradients.
+
+Please remake this task and report me by email.

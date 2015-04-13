@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Grid</title>
+
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .flex-item:nth-child(1){ background: hsl(221,50%,75%); }
+        .flex-item:nth-child(2){ background: hsl(226,50%,75%); }
+        .flex-item:nth-child(3){ background: hsl(231,50%,75%); }
+        .flex-item:nth-child(4){ background: hsl(236,50%,75%); }
+        .flex-item:nth-child(5){ background: hsl(241,50%,75%); }
+        .flex-item:nth-child(6){ background: hsl(246,50%,75%); }
+        .flex-item:nth-child(7){ background: hsl(251,50%,75%); }
+        .flex-item:nth-child(8){ background: hsl(256,50%,75%); }
+        .flex-item:nth-child(9){ background: hsl(261,50%,75%); }
+        .flex-item:nth-child(10){ background: hsl(266,50%,75%); }
+        .flex-item:nth-child(11){ background: hsl(271,50%,75%); }
+        .flex-item:nth-child(12){ background: hsl(276,50%,75%); }
+        .flex-item:nth-child(13){ background: hsl(281,50%,75%); }
+        .flex-item:nth-child(14){ background: hsl(286,50%,75%); }
+        .flex-item:nth-child(15){ background: hsl(291,50%,75%); }
+        .flex-item:nth-child(16){ background: hsl(296,50%,75%); }
+        .flex-item:nth-child(17){ background: hsl(301,50%,75%); }
+        .flex-item:nth-child(18){ background: hsl(306,50%,75%); }
+
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .flex-item {
+            flex-grow:1;
+            background:hsl(301,50%,75%);
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+        }
+
+        .flex-item span {
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            align-self: center;
+            font-size: 20px;
+            vertical-align: baseline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="demo" class="flex-container demo">
+        <div class="flex-item"><span>Lorem ipsum</span></div>
+        <div class="flex-item"><span>dolor</span></div>
+        <div class="flex-item"><span>sit</span></div>
+        <div class="flex-item"><span>amet</span></div>
+        <div class="flex-item"><span>consectetur</span></div>
+        <div class="flex-item"><span>adipiscing elit</span></div>
+        <div class="flex-item"><span>nunc</span></div>
+        <div class="flex-item"><span>enim</span></div>
+        <div class="flex-item"><span>nunc</span></div>
+        <div class="flex-item"><span>volutpat eget</span></div>
+        <div class="flex-item"><span>aliquam</span></div>
+        <div class="flex-item"><span>nec</span></div>
+        <div class="flex-item"><span>accumsan rutrum</span></div>
+        <div class="flex-item"><span>bacon</span></div>
+        <div class="flex-item"><span>maecenas</span></div>
+        <div class="flex-item"><span>nunc</span></div>
+        <div class="flex-item"><span>lorem</span></div>
+        <div class="flex-item"><span>culpa</span></div>
+    </div>
+
+</body>
+</html>

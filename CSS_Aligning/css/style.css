@@ -1,0 +1,107 @@
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+p {
+	color: white;
+}
+
+#wrapper {
+	height: 100%;
+	width: 100%
+}
+
+.content {
+	width: 800px;
+	margin: 0 auto;
+	height: 100%;
+	white-space: nowrap;
+}
+
+.content::after {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	width: 1px;
+	overflow: hidden;
+	margin: 0 0 0 -5px;
+	vertical-align: middle;
+}
+
+.content div {
+	display: inline-block;
+	background-color: #555;
+	width: 100%;
+	white-space: normal;
+	padding: 20px;
+}
+
+.sidebar-content {
+	position: fixed;
+	right: -420px;
+	top: 0;
+	height: 100%;
+	width: 400px;
+	background-color: #333;
+	padding: 150px 10px 20px;
+	text-align: center;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	transition: all 1s linear;
+}
+
+.sidebar-btn {
+	display: block;
+	position: fixed;
+	top: 20px;
+	right: 30px;
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	background-color: yellow;
+	z-index: 1;
+}
+
+.sidebar:hover > .sidebar-content{
+	right: 0;
+}
+
+.avatar {
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	border: 1px solid white;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.tab {
+	position: fixed;
+	bottom: -340px;
+	left: 0;
+	-webkit-transition: all 1s linear;
+	-moz-transition: all 1s linear;
+	transition: all 1s linear;
+}
+
+.tab:hover {
+	bottom: 0px;
+}
+
+.tab-btn {
+	position: absolute;
+	display: block;
+	width: 150px;
+	height: 50px;
+	background-color: #555;
+	top: -50px;
+	left: 0;
+}
+
+.tab-content {
+	background-color: #333;
+	width: 400px;
+	height: 300px;
+	padding: 20px 10px 20px;
+}

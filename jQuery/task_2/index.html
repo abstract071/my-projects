@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+    <style>
+        #list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #list li {
+            border: 1px solid #de6333;
+            border-radius: 3px;
+            margin-bottom: 5px;
+        }
+
+        #list .list-item-header {
+            display: flex;
+            align-items: center;
+            height: 40px;
+            width: 100%;
+            margin: 0;
+            padding-left: 20px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #list h2 {
+            display: inline-block;
+            margin: 0 0 0 10px;
+        }
+
+        #list .list-item-header:hover {
+            background-color: rgba(222,99,51, .3);
+            cursor: pointer;
+        }
+
+        #list .content {
+            margin: 0;
+            padding: 20px 10px;
+            border-top: 1px solid #de6333;
+        }
+
+        .header-icon {
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            background: url(play106.png) no-repeat;
+            transition: transform .5s ease;
+        }
+
+        .rotate {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+
+    <ul id="list">
+        <li>
+            <div class="list-item-header">
+                <span class="header-icon"></span><h2>Header 1</h2>
+            </div>
+            <div class="content">
+                <p>Cur canis assimilant? Est bassus repressor, cesaris. Placidus musas ducunt ad mensa.</p>
+            </div>
+        </li>
+        <li>
+            <div class="list-item-header">
+                <span class="header-icon"></span><h2>Header 2</h2>
+            </div>
+            <div class="content">
+                <p>Love doesn’t beautifully need any believer — but the visitor is what disappears.</p>
+            </div>
+        </li>
+        <li>
+            <div class="list-item-header">
+                <span class="header-icon"></span><h2>Header 3</h2>
+            </div>
+            <div class="content">
+                <p>Tabasco soup is just not the same without thyme and instant sliced strudels.</p>
+            </div>
+        </li>
+        <li>
+            <div class="list-item-header">
+                <span class="header-icon"></span><h2>Header 4</h2>
+            </div>
+            <div class="content">
+                <p>Where is the clear swabbie? Engage.</p>
+            </div>
+        </li>
+    </ul>
+
+<script>
+    $('#list .content').hide();
+    $('#list .list-item-header').on('click', function() {
+        $(this).next().slideToggle();
+        $(this).children().first().toggleClass('rotate');
+    });
+</script>
+</body>
+</html>

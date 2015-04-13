@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, dl, p, h1, h2, h3, h4, h5, h6, address, form, table, blockquote, applet, embed, object, iframe, frameset {
+  margin: 0 0 14px;
+}
+
+div, span, applet, embed, object, iframe, frameset,
+p, q, blockquote, sub, sup, a, abbr, acronym, font, img, small, center,
+h1, h2, h3, h4, h5, h6, b, strong, big, u, ins,
+i, cite, em, var, dfn, address, s, strike, del,
+dl, dt, dd, ol, ul, li, pre, code, kbd, samp, tt,
+fieldset, legend, form, label, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer, header,
+hgroup, menu, nav, section, summary, time, mark, audio, video {
+  border: 0;
+  background: none;
+}
+code{
+  background: #c8d1c6;
+  display: block;
+  color:#000;
+  margin-bottom:10px;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+}
+
+a {
+  text-decoration: underline;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  background-color: transparent;
+}
+
+input, textarea, select {
+  font: 100% arial, sans-serif;
+  vertical-align: middle;
+  color: #000;
+  overflow: auto;
+}
+
+label {
+  vertical-align: middle;
+}
+
+button, input {
+  width: auto;
+  overflow: visible;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong, th {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 200%;
+}
+
+h2 {
+  font-size: 150%;
+}
+
+h3 {
+  font-size: 120%;
+}
+
+h4 {
+  font-size: 110%;
+}
+
+h5 {
+  font-size: 100%;
+}
+
+h6 {
+  font-size: 90%;
+}
+
+i, cite, em, var, dfn, address {
+  font-style: italic;
+}
+
+u, ins {
+  text-decoration: underline;
+}
+
+s, strike, del {
+  text-decoration: line-through;
+}
+
+blockquote, blockquote:before, blockquote:after, q, q:before, q:after {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+}
+
+table, caption, tbody, tfoot, thead, tr, th, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 3px 7px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  border-color: #999;
+  text-align: center;
+  vertical-align: middle;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+input[type="image"] {
+  padding: 0;
+  border: none;
+}
+
+input[type=text], input[type=password], input[type=file], input[type=submit], textarea {
+  -webkit-appearance: none;
+}
+
+header, footer, article, section, hgroup, nav, figure {
+  display: block;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+#wrapper{
+	width:900px;
+	margin:0 auto;
+}
+h1{
+  margin:20px 0;
+}
+p{
+  margin:0 0 12px;
+}
+h3{
+  margin:12px 0;
+  font-size:18px;
+  line-height: 23px;
+}
+.separator{
+  display: block;
+  border-top:1px dashed #747474;
+  padding-bottom:20px;
+}
+.button{
+  border:1px solid #f1ede9;
+  padding:10px 0;
+  color:#fff;
+  text-decoration:none;
+  display:inline-block;
+  width:150px;
+  text-align: center;
+  margin-left:10px;
+}
+.button:hover{
+  color:#fff;
+  cursor: pointer;
+}
+.example-result{
+  border:1px dashed #747474;
+  padding: 10px;
+  margin: 0 0 10px;
+}
+.example-result img{
+  width:100%;
+  height:auto;
+  opacity:0.5;
+  -webkit-transition: opacity 1s linear;
+  transition: opacity 0.5s  linear;
+}
+.example-result img:hover{
+  opacity:1;
+}
+.progress-bar.progress-bar-success{
+  min-width:100px;
+}
+#wrapper .progress{
+  background-color:#393F45 !important;
+}

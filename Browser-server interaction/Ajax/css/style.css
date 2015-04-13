@@ -1,0 +1,103 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+#wrapper {
+    margin: 0 auto;
+    background: #353535;
+    min-height: 100%;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+.edit-buttons {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 1em 0;
+    overflow: hidden;
+}
+
+.edit-buttons button {
+    margin: 2em 1em 0;
+}
+
+.edit-buttons button:first-child {
+    margin-left: 5em;
+}
+
+#collection {
+    color: orange;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#collection th {
+    text-transform: uppercase;
+}
+
+#collection tbody tr:hover {
+    background: rgba(70,70,70,.5);
+}
+
+.btn-wrapper {
+    display: inline-block;
+    width: 100px;
+    float: right;
+}
+
+.btn-wrapper:first-child {
+    margin-left: 1500px;
+}
+
+.save-wrapper, .retrieve-wrapper {
+    margin: 0 auto;
+    font-size: 1.5em;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #1B1C1B;
+    -webkit-box-shadow: 2px 2px 2px 1px black,
+                        inset 5px 5px 30px -5px #999,
+                        inset -5px -5px 30px -5px black;
+    -moz-box-shadow: 2px 2px 2px 1px black,
+                     inset 5px 5px 30px -5px #999,
+                     inset -5px -5px 30px -5px black;
+    box-shadow: 2px 2px 2px 1px black,
+                inset 5px 5px 30px -5px #999,
+                inset -5px -5px 30px -5px black;
+}
+
+#save, #retrieve {
+    margin: 0;
+    color: white;
+    font-weight: 800;
+    width: 3.5em;
+    height: 3.5em;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    -webkit-transition: -webkit-transform .5s ease;
+    -moz-transition: -moz-transform .5s ease;
+    transition: transform .5s ease;
+
+}
+
+#save:focus, #retrieve:focus {
+    outline: 0;
+}
+
+#save:active,
+.save-wrapper:active,
+#retrieve:active,
+.retrieve-wrapper:active{
+    width: 3.3em;
+    height: 3.3em;
+}
+
+#save:hover, #retrieve:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+}

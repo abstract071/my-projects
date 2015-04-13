@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Animation, Transitions, Transforms</title>
+  <link media="all" rel="stylesheet" href="css/basicstyles/bootstrap.css">
+  <link media="all" rel="stylesheet" href="css/basicstyles/all.css">
+  <link media="all" rel="stylesheet" href="css/task-02.css">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+<!-- wrapper -->
+<div id="wrapper">
+  <!-- header -->
+  <header>
+    <h1>Transitions</h1>
+  </header>
+  <!-- main -->
+  <div id="main">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h2 class="panel-title">Task #2</h2>
+      </div>
+      <div class="panel-body">
+        <h3>Description:</h3>
+        <p>Create transition for progress-bars.
+          Each  progress-bar should change the properties on hover event for parent (.example-transition) box.</p>
+        <ul>
+          <li> - width;</li>
+          <li>- background-color;</li>
+        </ul>
+        <p class="text-success">Let's implement timing functions which relevance bar title.</p>
+        <code>
+          transition-timing-function
+        </code>
+        <p class="text-warning">Result:</p>
+        <div class="example-result">
+          <img src="images/img2.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="separator"></span>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Your Solution</h3>
+    </div>
+    <div class="panel-body">
+      <div class="example-transition">
+        <div class="progress">
+          <div class="progress-bar progress-bar-success ease">ease</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success linear">linear</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success easein">ease-in</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success easeout">ease-out</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success easeinout">ease-in-out</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <!-- there will be footer -->
+  </footer>
+</div>
+</body>
+</html>

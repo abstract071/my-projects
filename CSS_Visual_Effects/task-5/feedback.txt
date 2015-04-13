@@ -1,0 +1,4 @@
+Please remade this task.
+Because now it's incorrect.
+
+Make it as a menu with links. for each link should be styles an icon by image or icon font.

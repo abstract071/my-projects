@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#wrapper {
+    background: url("../images/escheresque_ste.png") repeat;
+    min-height: 100%;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #ffffff;
+    font: 20px Helvetica, Arial, sans-serif;
+}
+
+#textbox {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+#execute {
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+label {
+    display: block;
+    padding: 10px;
+    border-top: 1px dashed #fff;
+    overflow: auto;
+}
+
+/*#execute:focus {*/
+    /*border: none;*/
+/*}*/
+
+ul {
+    list-style: none;
+    padding: 1%;
+    /*overflow: hidden;*/
+}
+
+li {
+    margin: 20px 0;
+    /*float: left;*/
+    width: 100%;
+    outline: 1px solid #ffffff;
+    background-color: #222;
+}
+
+input[type=checkbox] {
+    display: inline-block;
+    margin: 10px;
+}

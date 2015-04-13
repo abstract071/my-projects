@@ -1,0 +1,484 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	width: 1600px;
+}
+
+#wrapper {
+	margin: 0 auto;
+}
+
+h3 {
+	text-align: center;
+}
+
+header {
+	position: relative;
+	border-top: 10px solid rgb(46,204,113);
+	height: 600px;
+	background-color: #888;
+	background: url(../background.jpg) no-repeat;
+	background-size: cover;
+}
+
+.hand {
+	position: absolute;
+	bottom: 0;
+	right: 267px;
+	width: 435px;
+	height: 507px;
+	background: url(../hand.png);
+}
+
+.hand img {
+	width: 162px;
+	height: 243px;
+	position: absolute;
+	top: 68px;
+	left: 67px;
+}
+
+.header-slogan {
+	position: absolute;
+	top: 169.1px;
+	left: 328.5px;
+	width: 440px
+}
+
+.slogan {
+	display: block;
+	color: white;
+	font-size: 60px;
+	padding: 0;
+	margin-bottom: 40px;
+}
+
+.slogan span {
+	color: rgb(46,204,113);
+}
+
+.slogan-text {
+	display: block;
+	font-size: 24px;
+	color: white;
+	margin-bottom: 20px;
+	line-height: 36px;
+}
+
+.os {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 0;
+}
+
+.os li {
+	display: inline-block;
+}
+
+.os a {
+	display: block;
+	position: relative;
+	width: 53px;
+	height: 53px;
+	border-radius: 50%;
+	margin-right: 15.4px;
+	background: url(../sprite_buttons.png) -118px 0 no-repeat;
+}
+
+.os a:hover {
+	background: url(../sprite_buttons.png) -191px 0 no-repeat;	
+}
+
+.apple-icon {
+	display: block;
+	position: absolute;
+	top: 12.7px;
+	left: 15px;
+	width: 21px;
+	height: 26px;
+	background: url(../sprite_buttons_icons.png) 0 -228px no-repeat;
+}
+
+.android-icon {
+	display: block;
+	position: absolute;
+	top: 14.3px;
+	left: 15.6px;
+	width: 23px;
+	height: 25px;
+	background: url(../sprite_buttons_icons.png) 0 -274px no-repeat;
+}
+
+.windows-icon {
+	display: block;
+	position: absolute;
+	top: 14.3px;
+	left: 12px;
+	width: 26px;
+	height: 25px;
+	background: url(../sprite_buttons_icons.png) 0 -680px no-repeat;
+}
+
+.os a:hover .apple-icon {
+	background: url(../sprite_buttons_icons.png) 0 -589px no-repeat;	
+}
+
+.os a:hover .android-icon {
+	background: url(../sprite_buttons_icons.png) 0 -635px no-repeat;	
+}
+
+.os a:hover .windows-icon {
+	background: url(../sprite_buttons_icons.png) 0 -319px no-repeat;	
+}
+
+.features {
+	padding-left: 209px;
+	overflow: hidden;
+	padding-top: 60px;
+	padding-bottom: 55px;
+}
+
+.features ul {
+	padding: 0;
+	list-style-type: none;
+	margin: 0;
+}
+
+.features li {
+	position: relative;
+	display: block;
+	width: 317px;
+	margin-right: 113px;
+	float: left;
+	text-align: center;
+}
+
+.features h3 {
+	margin-top: 0;
+}
+
+.features-text {
+	color: rgb(132,132,132);
+	line-height: 26px;
+	margin-bottom: 0;
+}
+
+.features-btn {
+	display: block;
+	position: relative;
+	margin: 0 auto 30px auto;
+	width: 98px;
+	height: 98px;
+	border-radius: 50%;
+	background: url(../sprite_buttons.png) 0px 0 no-repeat;
+}
+
+.edit-button::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 28px;
+	left: 28px;
+	width: 43px;
+	height: 43px;
+	background: url(../sprite_buttons_icons.png) 0 -78px no-repeat;
+}
+
+.design-button::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 23px;
+	left: 25px;
+	width: 48px;
+	height: 48px;
+	background: url(../sprite_buttons_icons.png) 0 0 no-repeat;
+}
+
+.reach-button::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 26px;
+	left: 26px;
+	width: 47px;
+	height: 47px;
+	background: url(../sprite_buttons_icons.png) 0 -151px no-repeat;
+}
+
+.notifying {
+	padding: 60px 210px 60px 209px;
+	overflow: hidden;
+	background-color: rgb(227,227,227);
+}
+
+.notifying h3 {
+	margin-top: 0;
+	text-align: left;
+	margin-bottom: 12px;
+}
+
+.notify-text {
+	display: block;
+	width: 539px;
+	margin: 0;
+	line-height: 26px;
+}
+
+.notify-text p {
+	margin-top: 12px;
+	margin-bottom: 23px;
+}
+
+.notifying form {
+	font-size: 0;
+}
+
+.notifying input[type=text] {
+	width: 277px;
+	height: 53px;
+	padding-left: 25px;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border: 1px solid silver;
+	font-size: 18px;
+	font-weight: normal;
+	color: rgb(165,165,165);
+	vertical-align: top;
+}
+
+.notifying input[type=submit] {
+	width: 141px;
+	height: 57px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border: none;
+	background-color: rgb(46,204,113);
+	color: white;
+	font-size: 22px;
+	font-weight: bold;
+	vertical-align: top;
+}
+
+.notifying input[type=submit]:hover {
+	cursor: pointer;
+}
+
+.video img {
+	display: block;
+	float: right;
+}
+
+.notifying p {
+	color: rgb(132,132,132);
+}
+
+.testimonials {
+	padding-top: 52px;
+	background-color: white;
+}
+
+.testimonials blockquote {
+	margin: 0 auto 17px;
+	width: 810px;
+	font-style: italic;
+	color: rgb(132,132,132);
+	text-align: center;
+	line-height: 30px;
+}
+
+.avatars {
+	margin: 0 auto 55px;
+	width: 1155px;
+	list-style-type: none;
+	overflow: hidden;
+	padding: 0;
+}
+
+.avatars li {
+	position: relative;
+	display: block;
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-right: 5px;
+}
+
+.avatars li:last-child {
+
+}
+
+.avatars li:first-child .ava-mask {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: -webkit-linear-gradient(right, rgba(255,255,255,0), rgba(255,255,255,1));
+	background: -moz-linear-gradient(right, rgba(255,255,255,0), rgba(255,255,255,1));
+	background: linear-gradient(right, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+.avatars li:last-child .ava-mask {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1));
+	background: -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1));
+	background: linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,1));
+}
+
+.avatars li:hover .ava-mask {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/avatart_overlay.png) 0 0 no-repeat;
+	cursor: pointer;
+}
+
+.testimonials .person-name {
+	font-size: 18px;
+	margin: 0;
+	margin-bottom: 25px;
+}
+
+.touch-header {
+	font-size: 23px;
+}
+
+.touch-text {
+	display: block;
+	width: 600px;
+	margin: 0 auto 22px;
+	color: rgb(132,132,132);
+	text-align: center;
+}
+
+.social-networks {
+	margin: 0 auto 60px;
+	padding: 0;
+	padding-left: 10px;
+	width: 264px;
+	overflow: hidden;
+}
+
+.social-networks li {
+	display: block;
+	width: 34px;	
+	height: 34px;
+	float: left;
+	margin-right: 10px;
+}
+
+.social-networks a {
+	display: block;
+	position: relative;
+	width: 34px;
+	height: 34px;
+	border-radius: 50%;
+	background: url(../sprite_buttons.png) -264px 0 no-repeat;
+}
+
+.social-networks a:hover {
+	background: url(../sprite_buttons.png) -318px 0 no-repeat;
+}
+
+.twitter-icon::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 12px;
+	left: 9px;
+	width: 17px;
+	height: 13px;
+	background: url(../sprite_buttons_icons.png) 0 -364px no-repeat;
+}
+
+.facebook-icon::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 9px;
+	left: 12px;
+	width: 9px;
+	height: 17px;
+	background: url(../sprite_buttons_icons.png) 0 -397px no-repeat;
+}
+
+.pinterest-icon::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	width: 20px;
+	height: 20px;
+	background: url(../sprite_buttons_icons.png) 0 -434px no-repeat;
+}
+
+.google-icon::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 9px;
+	left: 9px;
+	width: 19px;
+	height: 18px;
+	background: url(../sprite_buttons_icons.png) 0 -551px no-repeat;
+}
+
+.linkedin-icon::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 9px;
+	left: 10px;
+	width: 15px;
+	height: 15px;
+	background: url(../sprite_buttons_icons.png) 0 -474px no-repeat;
+}
+
+.youtube-icon::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 8px;
+	width: 18px;
+	height: 22px;
+	background: url(../sprite_buttons_icons.png) 0 -509px no-repeat;
+}
+
+#footer {
+	height: 130px;
+	background-color: rgb(227,227,227);
+}
+
+#footer nav {
+	overflow: hidden;
+	width: 100%;
+	margin-left: 10px;
+	text-align: center;
+}
+
+#footer li {
+	display: inline-block;
+	margin-right: 32px;
+	padding-top: 60px;
+}
+
+#footer a {
+	vertical-align: middle;
+	text-decoration: none;
+	color: rgb(132,132,132);
+	text-align: center;
+}

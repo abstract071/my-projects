@@ -1,0 +1,36 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    max-height: 100%;
+}
+
+body {
+    font-family: 'Bookman Old Style', Arial, sans-serif;
+    color: white;
+    background: url("../images/backgrounds/shattered.png");
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1em;
+    height: 100%;
+}
+
+#dropzone,
+#serverzone {
+    border: 5px dashed white;
+    border-radius: 10px;
+    padding: 2em;
+    text-align: center;
+}
+
+.over {
+    background: rgba(0,0,0,.1);
+}
+
+img {
+    height: 150px;
+    margin: 3px 6px;
+}

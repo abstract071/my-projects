@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+    <div id="wrapper">
+        <textarea name="" id="textbox" cols="30" rows="10" placeholder="Enter some text to perform the changes according to checkboxes that you choose"></textarea>
+        <button type="button" id="execute">Perform regex actions</button>
+        <ul>
+            <li>
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Проверка на Email
+                <label for=""></label>
+            </li>
+            <li>
+
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Проверка на URL
+                <label for=""></label>
+            </li>
+            <li>
+
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Проверка на IP адрес
+                <label for=""></label>
+            </li>
+            <li>
+
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Проверка на формат даты
+                <label for=""></label>
+            </li>
+            <li>
+
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Проверка Штата ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY']
+                <label for=""></label>
+            </li>
+            <li>
+
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Найти все HTML тэги содержащие любые атрибуты
+                <label for=""></label>
+            </li>
+            <li>
+
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Найти и заменить все емейлы в тексте на ссылки с этим же емейлом
+                <label for=""></label>
+            </li>
+            <li>
+
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Сделать каждую вторую букву в каждом слове заглавной
+                <label for=""></label>
+            </li>
+            <li>
+
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Заменить все теги &#60;strike> на &#60;del> и &#60;u> на &#60;ins>
+                <label for=""></label>
+            </li>
+            <li>
+
+                <input class="chbox" type="checkbox" name="regexoptions" value="">Найти все слова меньше 4 символов и завернуть их в &#60;b>&#60;/b>
+                <label for=""></label>
+            </li>
+        </ul>
+    </div>
+    <script src="js/regex.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.resize-image {
+	width: 1000px;
+	height: 700px;
+	background: url(../images/image.png);
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+}

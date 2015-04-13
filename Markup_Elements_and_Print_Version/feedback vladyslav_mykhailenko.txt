@@ -1,0 +1,18 @@
+print version
+Логотип сайта желательно показывать
+
+1)<img src="images/social_networks_border.png" alt="" class="header-border"> - это не картинка, перенести как бг на список
+2)<input type="text"> - value обязательный атрибут полей ввода, нужны горизонтальные отступы, чтоб курсор не прилипал к границе поля
+3)<a href="#">learn more</a><a href="#">our work</a> лучше ставить класс btn на случай, если добавится ссылочка просто в текст этого блока.
+4)<span class="adv-background-img-top"></span><span class="adv-background-img-bottom"></span> - это <img/>
+5)<div class="base"><span>You're here: Home > Welcome..</span></div> - это компонент breadcrumbs, через список реализация
+6)<h2>blog post name here</h2> - заголовок поста кликабельный
+7)Who we are и Sponsors - обернуть блоки в дивы
+8)<span class="top-border"></span> - не нужны отдельные теги для разделителей. вешай стили на существующие блоки
+9)<div class="recent-projects"> - картинки в список
+10).top-header - не хардкодь высоту. разруливай отступами
+11).social-networks зачем overflow: hidden;?
+12)nav li - нельзя употреблять li без ul, в nav можно напрямую ссылки ложить
+13).search-form form - не нужно позиционировтаь такие эелемнты абсолютом, достаточно флотнуть
+14)sponsors-img - списком, разделитель фоном на элемент списка
+15)

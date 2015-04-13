@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Magnific Popup</title>
+  <link href="all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+<body>
+<div class="popup-gallery">
+	<!--<img src="thumbs/1.jpg">-->
+	<a href="#" title="The Cleaner"><img src="thumbs/1.jpg" width="75" height="75"></a>
+	<a href="#" title="Winter Dance"><img src="thumbs/2.jpg" width="75" height="75"></a>
+	<a href="#" title="The Uninvited Guest"><img src="thumbs/3.jpg" width="75" height="75"></a>
+	<a href="#" title="Oh no, not again!"><img src="thumbs/4.jpg" width="75" height="75"></a>
+	<a href="#" title="Swan Lake"><img src="thumbs/5.jpg" width="75" height="75"></a>
+	<a href="#" title="The Shake"><img src="thumbs/6.jpg" width="75" height="75"></a>
+	<a href="#" title="Who's that, mommy?"><img src="thumbs/7.jpg" width="75" height="75"></a>
+</div>
+
+<script>
+	$(document).ready(function() {
+		$('body').append('<div></div>');
+		var $gallery = $('body div').last().addClass('gallery hide-gallery');
+		$gallery.append('<div></div>');
+		$gallery.append('<div></div>');
+		var $prev = $gallery.children().first().addClass('prev');
+		console.log($prev);
+		var $next = $gallery.children().last().addClass('next');
+		$('<div></div>').insertAfter($prev).addClass('img-holder');
+		$('.img-holder').append('<div></div>');
+		$('.img-holder').children().first().addClass('close');
+		$('.img-holder').append('<div></div>');
+		$('.img-holder').children().last().addClass('figcaption');
+		$('.figcaption').append('<span></span>');
+		$('.figcaption span').addClass('title');
+		$('.figcaption').append('<span></span>');
+		$('.figcaption span:last-child').addClass('imgs-amount');
+//		console.log($gallery);
+		var $popupImg = $('.popup-gallery img');
+		var i = 1;
+		$popupImg.each(function() {
+			$(this).data('number', i++);
+		});
+
+		var maxNumberOfImg = --i;
+
+
+		$('.popup-gallery img').on('click', function(event) {
+			$('.title').html($(this).parent().attr('title'));
+			$('.imgs-amount').html($(event.target).data('number')+ ' of ' + maxNumberOfImg);
+			$('.gallery img').remove();
+			$gallery.removeClass('hide-gallery');
+			$('<img>').insertAfter('.close');
+			$('.gallery img').attr({src: 'images/' + $(event.target).data('number') + '.jpg',
+									'data-number': $(event.target).data('number')});
+			event.stopPropagation();
+		});
+		$('.next').on('click', function(event) {
+			toggleNext();
+			event.stopPropagation();
+		});
+		$('.prev').on('click', function(event) {
+			togglePrevious();
+			event.stopPropagation();
+		});
+		$('.gallery').on('click', 'img', function(event) {
+			toggleNext();
+			event.stopPropagation();
+		});
+		$('.gallery').on('click', function(event) {
+			event.stopPropagation();
+			$(this).addClass('hide-gallery');
+
+		});
+		$(document).keyup(function( event ) {
+			if (!$('.gallery').hasClass('hide-gallery')) {
+				if (event.keyCode === 37 || event.which === 37) {
+					togglePrevious();
+				} else if (event.keyCode === 39 || event.which === 39) {
+					toggleNext();
+				} else if (event.keyCode === 27 || event.which === 27) {
+					$('.gallery').addClass('hide-gallery');
+				}
+			}
+		});
+		var toggleNext = function() {
+
+			var counter = $('.gallery img').data('number');
+			if (counter == maxNumberOfImg) {
+				counter = 1;
+			} else {
+				counter++;
+			}
+			$('.gallery img').replaceWith('<img src="images/' + counter + '.jpg" data-number=' + counter + '>');
+			$('.title').html($('.popup-gallery img[src="thumbs/' + counter + '.jpg"]').parent().attr('title'));
+			$('.imgs-amount').html($('.img-holder img').data('number')+ ' of ' + maxNumberOfImg);
+		};
+		var togglePrevious = function() {
+			$('.figcaption').html($(this).parent().attr('title'));
+			var counter = $('.gallery img').data('number');
+			if (counter == 1) {
+				counter = maxNumberOfImg;
+			} else {
+				counter--;
+			}
+			$('.gallery img').replaceWith('<img src="images/' + counter + '.jpg" data-number=' + counter + '>');
+			$('.title').html($('.popup-gallery img[src="thumbs/' + counter + '.jpg"]').parent().attr('title'));
+			$('.imgs-amount').html($('.img-holder img').data('number')+ ' of ' + maxNumberOfImg);
+		};
+	});
+</script>
+</body>
+</html>

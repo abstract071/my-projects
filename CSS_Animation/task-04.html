@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Animation, Transitions, Transforms</title>
+  <link media="all" rel="stylesheet" href="css/basicstyles/bootstrap.css">
+  <link media="all" rel="stylesheet" href="css/basicstyles/all.css">
+  <link media="all" rel="stylesheet" href="css/task-04.css">
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+<!-- wrapper -->
+<div id="wrapper">
+  <!-- header -->
+  <header>
+    <h1>Transforms</h1>
+  </header>
+  <!-- main -->
+  <div id="main">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h2 class="panel-title">Task #4</h2>
+      </div>
+      <div class="panel-body">
+        <h3>Description:</h3>
+        <p>Implement 3D transform.</p>
+        <p>Rotate image by Y axis and implement back card text. On hover event (.card) should be horizontally rotated.</p>
+        <p class="text-success">Please add needed styles to the code.</p>
+        <code>
+          div {
+            -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+            backface-visibility: hidden;
+          }
+        </code>
+        <p class="text-warning">Result:</p>
+        <div class="example-result">
+          <img src="images/img5.png" style="width:234px; height:172px">
+          <img src="images/img4.png" style="width:150px; height:150px">
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="separator"></span>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Your Solution</h3>
+    </div>
+    <div class="panel-body">
+      <div class="card-container">
+        <div class="card">
+          <div class="side"><img src="images/credit_card-green.png"></div>
+          <div class="side back">Some text...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <!-- there will be footer -->
+  </footer>
+</div>
+</body>
+</html>

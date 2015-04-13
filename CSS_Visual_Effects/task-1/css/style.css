@@ -1,0 +1,10 @@
+.columns-3 {
+  width: 1000px;
+  height: 300px;
+  padding: 0.5em;
+  background-color: #888;
+  -webkit-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 12px;
+  column-gap: 12px;
+}

@@ -1,0 +1,7 @@
+.multiple-images {
+	width: 1000px;
+	height: 700px;
+	background: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSqKtIWPcZp9U4WffBQZuPpvTinknhkJS1hG0HfvTn7TMbS_ZV-k68G3QAJ") top left no-repeat,
+				url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS2zYKL-YpNEwNZCcxsrYnqMQhniGSvMaXe3DVahZIVJqn2Zkd8MQ") center center no-repeat,
+				#333 top left no-repeat;
+}

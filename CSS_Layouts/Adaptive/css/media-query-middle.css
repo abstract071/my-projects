@@ -1,0 +1,19 @@
+@media screen and (max-width: 1024px) {
+	header > div {
+		font-size: 14px;
+	}
+
+	section {
+		height: 400px;
+		font-size: 18px;
+	}
+
+	#wrapper > div {
+		height: 200px;
+		font-size: 14px;
+	}
+
+	footer > div {
+		font-size: 14px;
+	}
+}

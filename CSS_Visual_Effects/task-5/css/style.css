@@ -1,0 +1,31 @@
+/* 1. external links
+The ^= specifies that we want to match links that begin with the http://
+*/
+a[href^="http://"] {
+	color: red;
+}
+/* 2. emails
+The ^= specifies that we want to match links that begin with the mailto:
+*/
+a[href^="mailto:"] {
+	text-decoration: none;
+}
+/* 3. pdfs
+The $= specifies that we want to match links whose hrefs end with ".pdf".
+*/
+a[href$=".pdf"] {
+	font-size: 2em;
+}
+/* 4. zip
+Same as above but for zip files and it adds an icon at the right of the link. Therefore the :after
+*/
+a[href$=".zip"]::after {
+	font-family: "fontello";
+	content: '\e801';
+}
+/* 5. djavupixel
+The *= specifies that at least one instance of the substring “djavupixel” matches.
+*/
+p[data-string*="djavupixel"] {
+	letter-spacing: 2px;
+}

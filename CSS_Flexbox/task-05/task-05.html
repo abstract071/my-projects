@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Vertical alignment</title>
+
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .flex-container {
+            display: flex;
+            background-color: rgb(191,227,255);
+            height: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .flex-item {
+            background-color: rgb(34,181,115);
+            border: 2px solid #ffffff;
+            border-radius: 3px;
+            color: #ffffff;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .flex-item span{
+            display: inline-block;
+            padding: 1em;
+        }
+
+        .flex-item:first-child {
+            align-self: flex-start;
+        }
+
+        .flex-item:nth-child(2) {
+            align-self: center;
+        }
+
+        .flex-item:last-child {
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="flex-item">
+            <span>Flex item Top</span>
+        </div>
+        <div class="flex-item">
+            <span>Flex item Centered</span>
+        </div>
+        <div class="flex-item">
+            <span>Flex item Bottom</span>
+        </div>
+    </div>
+
+</body>
+</html>

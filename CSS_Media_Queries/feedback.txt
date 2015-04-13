@@ -1,0 +1,9 @@
+You made one big mistake.
+
+You left the width in px on main container 1024px.
+It's wrong.
+
+Responsive layout should be without any units in px.
+Better use units em/%.
+
+Please fix it and report me by email.

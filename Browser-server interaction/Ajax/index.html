@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Reenie+Beanie&effect=fire' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.firebase.com/js/client/2.0.6/firebase.js"></script>
+    <style>
+        .save-wrapper, .retrieve-wrapper {
+            font-family: 'Reenie Beanie', cursive;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrapper">
+
+        <div class="edit-buttons">
+            <button id="add-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#optionsModal"> <!--data-whatever="@mdo"-->Add employee</button>
+            <button id="remove-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#optionsModal"> <!--data-whatever="@fat"-->Remove employee</button>
+            <button id="edit-btn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#optionsModal"> <!--data-whatever="@twbootstrap"-->Edit employee</button>
+            <div class="btn-wrapper">
+                <div class="save-wrapper">
+                    <button id="save" class="font-effect-fire">Save</button>
+                </div>
+            </div>
+            <div class="btn-wrapper">
+                <div class="retrieve-wrapper">
+                    <button id="retrieve" class="font-effect-fire">Retrieve</button>
+                </div>
+            </div>
+        </div>
+
+        <!--  ------------------------------- Modal window --------------------------------------- -->
+
+        <div class="modal fade" id="optionsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="title">New message</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Recipient:</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="control-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Send message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ------------------------------------------------------------------------------------- -->
+
+        <table id="collection" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>salary (monthly)</th>
+                    <th>type</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/employee.js"></script>
+    <script src="js/fixedSalaryEmployee.js"></script>
+    <script src="js/hourlySalaryEmployee.js"></script>
+    <script src="js/employeeCollection.js"></script>
+    <script src="js/employeeFactory.js"></script>
+    <script src="js/singletonCollection.js"></script>
+</body>
+</html>

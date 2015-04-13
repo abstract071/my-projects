@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+    <div id="wrapper">
+        <div id="request">
+            <form action="">
+                <fieldset>
+                    <textarea name="json-data" id="json" cols="100" rows="20" placeholder="Paste here the content of json file..."></textarea>
+                    <label for="json-btn">This button invokes abstract factory for filling up the collection of employees</label>
+                    <button type="button" id="json-btn" name="json-btn">Convert data from JSON</button>
+                </fieldset>
+            </form>
+        </div>
+        <div id="response">
+            <form action="">
+                <fieldset>
+                    <label>This is sorted collection of employees</label>
+                    <label id="collection"></label>
+                    <label for="json-btn">Enter the number how many names you want to get</label>
+                    <input type="text" name="namesAmount" id="namesAmount">
+                    <button type="button" id="getNames" name="getNames">Get names</button>
+                    <label for="namesOutput" id="namesOutput"></label>
+                    <label for="json-btn">Enter the number how many IDs you want to get</label>
+                    <input type="text" name="idsAmount" id="idsAmount">
+                    <button type="button" id="getIds" name="getIds">Get IDs</button>
+                    <label for="idsOutput" id="idsOutput"></label>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script data-main="app" src="bower_components/requirejs/require.js"></script>
+</body>
+</html>

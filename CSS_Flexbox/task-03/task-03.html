@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Flexibility</title>
+
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .flex-container {
+            display: flex;
+            background-color: #ddd;
+            height: 100%;
+        }
+
+        .flex-item {
+            background-color: rgb(191,227,255);
+            margin: 5px;
+            color: #ffffff;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 5px;
+            border: 2px solid #ffffff;
+        }
+
+        .flex-item span{
+            display: inline-block;
+            padding: 1em 1.5em;
+            text-align: center;
+            font-size: 20px;
+            vertical-align: baseline;
+        }
+
+        .item1 {
+            background: hsl(306,50%,75%);
+            flex-grow: 1;
+        }
+
+        .item2 {
+            background-color: rgb(34,181,115);
+            flex-grow: 2;
+        }
+
+        .item3 {
+            background: hsl(221,50%,75%);
+            flex-grow: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="flex-container">
+        <div class="flex-item item1"><span>Column 1</span></div>
+        <div class="flex-item item2"><span>Column 2</span></div>
+        <div class="flex-item item3"><span>Column 3</span></div>
+    </div>
+
+</body>
+</html>

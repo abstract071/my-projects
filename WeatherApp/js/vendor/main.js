@@ -11,6 +11,7 @@ define('vendor', [
     return {
         '$': core.$,
         '_': core._,
+        'Modernizr': core.Modernizr,
         'util': util
     };
 });

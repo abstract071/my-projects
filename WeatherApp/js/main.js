@@ -11,7 +11,10 @@ require.config({
         'jqueryui': 'libs/jquery-ui',
         'jquerytouchpunch': 'libs/jquery.ui.touch-punch.min',
         'lodash': 'libs/lodash.min',
-        'text': 'libs/text'
+        'text': 'libs/text',
+        'geoservice': 'services/google.maps.service',
+        'forecastioservice': 'services/forecastio.service',
+        'modernizr': 'libs/modernizr.min'
     },
     shim: {
         'jqueryui': {

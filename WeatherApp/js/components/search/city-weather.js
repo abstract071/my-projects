@@ -1,12 +1,7 @@
 /**
- * Created by Vlad on 10.01.2015.
+ * Created by Vlad on 28.01.2015.
  */
-define([
-    'vendor'
-    //'components/search/search-view'
-    //'utils/gallery/jquery.bxslider.min',
-    //'text!utils/gallery/jquery.bxslider.css'
-], function (Vendor/*, SearchView*/) {
+define(['vendor'], function (Vendor) {
     'use strict';
 
     var /*$ = Vendor.$,*/

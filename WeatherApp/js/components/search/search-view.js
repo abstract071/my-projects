@@ -54,6 +54,12 @@ define([
             //this.$holder.find('.icon-add').on('click', function(e) {
             //    emitter.trigger('click', 'by me', 10, 'times');
             //});
+            $('input[name=cityname]').on('input', function() {
+                emitter.trigger('searchStateHasChanged');
+            });
+            $('.icon-add').on('click', function() {
+                emitter.trigger('addCityToCollection');
+            });
         }
     });
 

@@ -8,17 +8,19 @@ define([
 
     var $ = Vendor.$;
 
-    var bxSlider = function () {
+    var bxSlider = function (slideIndex) {
          return $('.bxslider').bxSlider({
                 controls: false,
-                slideMargin: 10
-                //onSliderLoad: function(currentIndex) {
-                //    $('.bxslider > li').eq(currentIndex + 1).addClass('active');
-                //},
-                //onSlideBefore: function($slideElement, oldIndex, newIndex) {
-                //    $('.bxslider > li').eq(oldIndex + 1).removeClass('active');
-                //    $('.bxslider > li').eq(newIndex + 1).addClass('active');
-                //}
+                slideMargin: 10,
+                //adaptiveHeight: true,
+                //startSlide: this.getCurrentSlide() || 0,
+                onSliderLoad: function(currentIndex) {
+                    $('.bxslider > li').eq(currentIndex + 1).addClass('active');
+                },
+                onSlideBefore: function($slideElement, oldIndex, newIndex) {
+                    $('.bxslider > li').removeClass('active');
+                    $('.bxslider > li').eq(newIndex + 1).addClass('active');
+                }
             });
     };
 

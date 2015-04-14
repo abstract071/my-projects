@@ -47,10 +47,10 @@
 .icon-almost-old:before {
   content: "c";
 }
-.icon-cloudy:before {
+.icon-cloudy-day:before {
   content: "d";
 }
-.icon-cloudy-day:before {
+.icon-cloudy:before {
   content: "e";
 }
 .icon-delete:before {
@@ -83,10 +83,10 @@
 .icon-menu:before {
   content: "o";
 }
-.icon-night:before {
+.icon-clear-night:before {
   content: "q";
 }
-.icon-night-cloudy:before {
+.icon-partly-cloudy-night:before {
   content: "r";
 }
 .icon-night-less-cloudy:before {
@@ -95,7 +95,7 @@
 .icon-old-moon:before {
   content: "t";
 }
-.icon-partly-cloudy:before {
+.icon-partly-cloudy-day:before {
   content: "u";
 }
 .icon-rain:before {
@@ -119,7 +119,7 @@
 .icon-snow:before {
   content: "B";
 }
-.icon-sunny:before {
+.icon-clear-day:before {
   content: "C";
 }
 .icon-sunrise:before {

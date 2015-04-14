@@ -1,3 +1,5 @@
+<% console.log(cityData) %>
+<% var degrees = {} %>
 <li data-city-name="<%= cityData.cityName/*.replace(/\s+/g, '')*/ %>">
     <div class="current-forecast">
         <header class="subheader">
@@ -7,9 +9,11 @@
                 <time>monday, november 3 ${ '=))' }</time>
             </h2>
         </header>
-        <div class="current-temperature icon-snow">
+        <div class="current-temperature icon-<%= cityData.icon %>">
             <div class="current-state">
-                <span class="temp">-2</span>
+                <% degrees.celsius = cityData.convertToCelsius(cityData.temperature) %>
+                <% degrees.fahrenheit = Math.round(cityData.temperature) %>
+                <span class="temp" data-fahrenheit="<%= degrees.fahrenheit %>" data-celsius="<%= degrees.celsius %>"><%- degrees[typeOfDegrees] %></span>
                 <span class="state-text">//mostly cloudy</span>
             </div>
             <div class="astronomical-data">
@@ -20,96 +24,17 @@
         <div class="weather-slider">
             <div class="scroll-pane ui-widget ui-widget-header ui-corner-all">
                 <ul class="scroll-content">
+                    <% var hours = _.map(_.pluck(cityData.hourly, 'time'), function(time) { return (new Date(time*1000)).getHours().toFixed(2); }) %>
+                    <% var hourlyTemperature = _.pluck(cityData.hourly, 'temperature') %>
+                    <% for (var i = 0; i < 24; i++) { %>
                     <li class="scroll-content-item ui-widget-header">
-                        <span class="time">6:00</span>
-                        <span class="icon icon-thunderstorm"></span>
-                        <span class="temp">-2</span>
+                        <span class="time"><%- hours[i] %></span>
+                        <span class="icon icon-<%= cityData.hourly[i].icon %>"></span>
+                        <% degrees.celsius = cityData.convertToCelsius(hourlyTemperature[i]) %>
+                        <% degrees.fahrenheit = Math.round(hourlyTemperature[i]) %>
+                        <span class="temp" data-fahrenheit="<%= degrees.fahrenheit %>" data-celsius="<%= degrees.celsius %>"><%- degrees[typeOfDegrees] %></span>
                     </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">7:00</span>
-                        <span class="icon icon-sleet-rain"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">8:00</span>
-                        <span class="icon icon-partly-cloudy"></span>
-                        <span class="temp">-2</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">9:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">10:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">11:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">12:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">13:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">14:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">15:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">16:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">17:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">18:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">19:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">20:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">21:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">22:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
-                    <li class="scroll-content-item ui-widget-header">
-                        <span class="time">23:00</span>
-                        <span class="icon icon-sunny"></span>
-                        <span class="temp">0</span>
-                    </li>
+                    <% } %>
                 </ul>
             </div>
             <div class="scroll-bar-wrap ui-widget-content ui-corner-bottom">
@@ -137,89 +62,30 @@
         </ul>
     </div>
 
-    <% var arrDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sut']; %>
+    <% var arrDays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat']; %>
     <% var today = new Date(); %>
     <% var todayIndex = today.getDay(); %>
 
     <div class="week-forecast">
         <ul>
+            <% for (var i = 0; i < 7; i++) { %>
             <li>
-                <span class="day">today</span>
-                <span class="weather-icon icon-heavy-snow"></span>
+                <span class="day"><%- (!i) ? 'today' : arrDays[(++todayIndex)%7] %></span>
+                <span class="weather-icon icon-<%= cityData.daily[i].icon %>"></span>
                 <div class="temp-range">
-                    <span class="bottom-temp"><%- Math.round(cityData.daily[0].temperatureMin) %></span>
-                    <div class="box-range">
+                    <% degrees.celsius = cityData.convertToCelsius(cityData.daily[i].temperatureMin) %>
+                    <% degrees.fahrenheit = Math.round(cityData.daily[i].temperatureMin) %>
+
+                    <span class="bottom-temp" data-fahrenheit="<%= degrees.fahrenheit %>" data-celsius="<%= degrees.celsius %>"><%- degrees[typeOfDegrees] %></span>
+                    <!--<div class="box-range">-->
                         <span class="range"></span>
-                    </div>
-                    <span class="top-temp"><%- Math.round(cityData.daily[0].temperatureMax) %></span>
+                    <!--</div>-->
+                    <% degrees.celsius = cityData.convertToCelsius(cityData.daily[i].temperatureMax) %>
+                    <% degrees.fahrenheit = Math.round(cityData.daily[i].temperatureMax) %>
+                    <span class="top-temp" data-fahrenheit="<%= degrees.fahrenheit %>" data-celsius="<%= degrees.celsius %>"><%- degrees[typeOfDegrees] %></span>
                 </div>
             </li>
-            <li>
-                <span class="day"><%- arrDays[(++todayIndex)%7] %></span>
-                <span class="weather-icon icon-sleet-rain"></span>
-                <div class="temp-range">
-                    <span class="bottom-temp"><%- Math.round(cityData.daily[1].temperatureMin) %></span>
-                    <div class="box-range">
-                        <span class="range"></span>
-                    </div>
-                    <span class="top-temp"><%- Math.round(cityData.daily[1].temperatureMax) %></span>
-                </div>
-            </li>
-            <li>
-                <span class="day"><%- arrDays[(++todayIndex)%7] %></span>
-                <span class="weather-icon icon-sunny"></span>
-                <div class="temp-range">
-                    <span class="bottom-temp"><%- Math.round(cityData.daily[2].temperatureMin) %></span>
-                    <div class="box-range">
-                        <span class="range"></span>
-                    </div>
-                    <span class="top-temp"><%- Math.round(cityData.daily[2].temperatureMax) %></span>
-                </div>
-            </li>
-            <li>
-                <span class="day"><%- arrDays[(++todayIndex)%7] %></span>
-                <span class="weather-icon icon-thunderstorm"></span>
-                <div class="temp-range">
-                    <span class="bottom-temp"><%- Math.round(cityData.daily[3].temperatureMin) %></span>
-                    <div class="box-range">
-                        <span class="range"></span>
-                    </div>
-                    <span class="top-temp"><%- Math.round(cityData.daily[3].temperatureMax) %></span>
-                </div>
-            </li>
-            <li>
-                <span class="day"><%- arrDays[(++todayIndex)%7] %></span>
-                <span class="weather-icon icon-cloudy"></span>
-                <div class="temp-range">
-                    <span class="bottom-temp"><%- Math.round(cityData.daily[4].temperatureMin) %></span>
-                    <div class="box-range">
-                        <span class="range"></span>
-                    </div>
-                    <span class="top-temp"><%- Math.round(cityData.daily[4].temperatureMax) %></span>
-                </div>
-            </li>
-            <li>
-                <span class="day"><%- arrDays[(++todayIndex)%7] %></span>
-                <span class="weather-icon icon-dust"></span>
-                <div class="temp-range">
-                    <span class="bottom-temp"><%- Math.round(cityData.daily[5].temperatureMin) %></span>
-                    <div class="box-range">
-                        <span class="range"></span>
-                    </div>
-                    <span class="top-temp"><%- Math.round(cityData.daily[5].temperatureMax) %></span>
-                </div>
-            </li>
-            <li>
-                <span class="day"><%- arrDays[(++todayIndex)%7] %></span>
-                <span class="weather-icon icon-fog"></span>
-                <div class="temp-range">
-                    <span class="bottom-temp"><%- Math.round(cityData.daily[6].temperatureMin) %></span>
-                    <div class="box-range">
-                        <span class="range"></span>
-                    </div>
-                    <span class="top-temp"><%- Math.round(cityData.daily[6].temperatureMax) %></span>
-                </div>
-            </li>
+            <% } %>
         </ul>
     </div>
 </li>

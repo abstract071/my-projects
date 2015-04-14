@@ -5,12 +5,12 @@ define([
     'vendor',
     'components/page/page-view',
     'utils/sliders/slider.scrollbar',
-    'components/models/city-weather',
-    'components/models/weather-data-collection'
-], function (Vendor, PageView, scrollbarSlider, CityWeather, WeatherDataCollection) {
+    /*'components/models/city-weather',
+    'components/models/weather-data-collection'*/
+], function (Vendor, PageView, scrollbarSlider/*, CityWeather, WeatherDataCollection*/) {
     'use strict';
 
-    var /*$ = Vendor.$,*/
+    var $ = Vendor.$,
         _ = Vendor._,
         emitter = Vendor.util.EventEmitter,
         Class = Vendor.util.Class,
@@ -30,44 +30,36 @@ define([
         initialize: function () {
 
             //emitter.on('createScrollbarSlider', this.addScrollbarSlider, this);
-            this.weatherDataCollection = new WeatherDataCollection();
+            //this.weatherDataCollection = new WeatherDataCollection();
             this.pageView = new PageView({ rootHolder: '.bxslider' });
             emitter.on('renderTemperatureRanges', this.renderTemperatureRanges, this);
 
         },
-        addScrollbarSlider: function() {
+        addScrollbarSlider: function(id, element) {
             //$('.weather-slider').each(function(index) {
             //console.log($('.bxslider > li').size());
+            //console.log(id);
+            //console.log(element.find('.weather-slider'));
 
-            var index = $('.weather-slider').size();
+            //var index = $('.weather-slider').size();
             //console.log($('.weather-slider').eq(index - 2));
-            scrollbarSlider('.scrollSlider' + index, $('.weather-slider').eq(index - 1));
+            scrollbarSlider(/*'scrollSlider' +*/ id, element.find('.weather-slider')/*$('.weather-slider').eq(index - 1)*/);
             //});
         },
         renderTemperatureRanges: function(cityNameAttr) {
-            console.log('\n\n');
-            //console.log($(pageTempTpl).find('.box-range span'));
-            //console.log($('[data-city-name="' + cityNameAttr + '"]:not(.bx-clone)'));
+            /*console.log('\n\n');
             var $currentLi = $('[data-city-name="' + cityNameAttr + '"]:not(.bx-clone)');
             var contWidth = $currentLi.find('.box-range').width();
-            //console.log(contWidth);
-            //$('.bottom-temp').text();
-            //var elWidth = $('.box-range span').data('range');
-            //$("#container").append('<span>' + $('.box-range span').data('range') + '</span>');
 
             var arrMins = [],
                 arrMaxs = [],
-            //arrRangesWidth = [],
-                fullWidths = [],
-                arrEdges = [];
+                fullWidths = [];
 
             var $range = $currentLi.find('.box-range span');
             $range.each(function() {
-                //arrRangesWidth.push($(this).data('max') - $(this).data('min'));
                 arrMins.push($(this).parent().parent().find('.bottom-temp').text());
                 arrMaxs.push($(this).parent().parent().find('.top-temp').text());
             });
-            //var maxWidth = Math.max.apply(undefined, arrRangesWidth);
             var minEdge = Math.min.apply(undefined, arrMins);
             var maxEdge = Math.max.apply(undefined, arrMaxs);
             var maxRange = maxEdge - minEdge;
@@ -85,25 +77,56 @@ define([
                 //console.log('Index: ' + index);
 
                 var elWidth = $currentLi.find('.top-temp').eq(index).text() - $currentLi.find('.bottom-temp').eq(index).text();
-                //$(this).data('range', elWidth);
-                //console.log((elWidth/maxRange)*contWidth);
-                return ((elWidth/maxRange)*contWidth);
+                return ((((elWidth/maxRange)*contWidth)/contWidth)*100) + '%';
             });
 
             $range.each(function(index) {
                 var offset = (($currentLi.find('.bottom-temp').eq(index).text() - minEdge)/maxRange)*contWidth;
-                //console.log($(this).data('range'));
-                //console.log($(this).data('min'));
-                //console.log(minEdge);
-                //console.log(offset);
-                //console.log($(this).data('min') - minEdge);
-                $(this).css('margin-left', offset);
+                $(this).css('margin-left', ((offset/contWidth)*100) + '%');
                 fullWidths.push(parseFloat($(this).css('margin-left')) + $(this).width());
 
             });
-            //console.log($('.box-range').width());
             console.log('Full max width: ' + Math.max.apply(undefined, fullWidths));
-            //$(".box-range").width(curWidth/maxRange)*contWidth;
+            //$(".box-range").width(curWidth/maxRange)*contWidth;*/
+
+
+            //console.log('\n\n');
+            var $currentLi = $('[data-city-name="' + cityNameAttr + '"]:not(.bx-clone)');
+            //var contWidth = $currentLi.find('.temp-range').width();
+
+            var arrMins = [],
+                arrMaxs = [],
+                fullWidths = [];
+
+            var $range = $currentLi.find('.temp-range');
+
+            //Define min and max temperature for each day
+            $range.each(function() {
+                arrMins.push($(this).find('.bottom-temp').text());
+                arrMaxs.push($(this).find('.top-temp').text());
+            });
+            var minEdge = Math.min.apply(undefined, arrMins);
+            var maxEdge = Math.max.apply(undefined, arrMaxs);
+            var maxRange = maxEdge - minEdge;
+            //console.log('Mins array: ' + arrMins);
+            //console.log('Maxs array: ' + arrMaxs);
+
+            //Set corresponding width for white range
+            $range.find('.range').width(function(index) {
+                var elWidth = arrMaxs[index] - arrMins[index];
+                return (elWidth/maxRange*70) + '%';
+            });
+
+            //Set corresponding offset
+            $range.find('.bottom-temp').each(function(index) {
+                var offset = ((arrMins[index] - minEdge)/maxRange)*70;
+                $(this).css('margin-left', offset + '%');
+                fullWidths.push(parseFloat($(this).css('margin-left')) + $(this).width());
+
+            });
+            //console.log('Full max width: ' + Math.max.apply(undefined, fullWidths));
+
+
         }
 
     });

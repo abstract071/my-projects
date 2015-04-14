@@ -39,14 +39,27 @@ define(/*'components/dashboard/dashboard-view', */[
             //console.log(pageTemplate);
             //this.$holder.append(this.tpl());
         //},
-        renderSearchResult: function (cityData){
-            //console.log();
-            var pageTpl = this.tpl({ cityData: cityData });
+        renderSearchResult: function (cityData, typeOfDegrees){
+            //console.log(cityData);
+            //console.log(typeOfDegrees);
+            //console.time("Template timing");
+            var pageTpl = this.tpl({ cityData: cityData, typeOfDegrees: typeOfDegrees });
+            //console.timeEnd("Template timing");
             //console.log(pageTpl);
             this.$holder.append(pageTpl);
             //console.log($(pageTpl).data('city-name'));
             return $(pageTpl).data('city-name');
         },
+        /*rerenderDegrees: function($activeSlide, cityData, typeOfDegrees) {
+            console.time("Template timing");
+            var pageTpl = this.tpl({ cityData: cityData, typeOfDegrees: typeOfDegrees });
+            console.timeEnd("Template timing");
+            //console.log($(pageTpl).addClass('active'));
+            $activeSlide.replaceWith($(pageTpl).addClass('active'));
+            //console.log($(pageTpl).get());
+            //console.log($(pageTpl).data('city-name'));
+            return $(pageTpl).data('city-name');
+        },*/
         removeSlides: function(cityName) {
             emitter.trigger('removeSlides', cityName);
         },

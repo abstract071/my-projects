@@ -13,6 +13,7 @@ define([
 
     var $ = Vendor.$,
         _ = Vendor._,
+        emitter = Vendor.util.EventEmitter,
         Class = Vendor.util.Class,
         SettingsView;
 
@@ -26,11 +27,13 @@ define([
             //BoardView.prototype = new Vendor.util.EventEmitter();
             this.initialize();
             this.render();
+            this.addEventListeners();
         },
         initialize: function () {
             this.collectElements();
             daysRangeSlider();
             updateRangeSlider();
+
         },
         collectElements: function () {
             this.$holder = $(this.options.rootHolder);
@@ -38,6 +41,12 @@ define([
         },
         render: function (){
             this.$holder.append(this.tpl());
+        },
+        addEventListeners: function() {
+            $('.fahrenheit, .celsius').click(function(event) {
+                //console.log(event.target);
+                emitter.trigger('transformDegrees', event);
+            });
         }
     });
 

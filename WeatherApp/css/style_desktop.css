@@ -122,6 +122,10 @@ CSS Grid
     text-decoration: none;
 }
 
+.bx-pager .bx-pager-item:only-child {
+    display: none;
+}
+
 .bx-pager-link {
     display: block;
     width: 1.5em;
@@ -214,13 +218,13 @@ CSS Grid
 }
 
 .weather-slider .scroll-content {
-    width: 450%;
+    width: 600%;
 }
 
 .weather-slider .scroll-content li {
     /*display: flex;*/
     /*justify-content: center;*/
-    width: 5.55555%;
+    width: 4.16666%;
     display: inline-block;
 }
 
@@ -364,6 +368,7 @@ CSS Grid
 .bottom-temp,
 .top-temp {
     width: 15%;
+    text-align: center;
 }
 
 .temp-range > * {
@@ -596,6 +601,12 @@ input[name=cityname]:focus {
 
 .description * {
     font-size: 4em;
+    color: rgba(79, 88, 101, 1);
+}
+
+.description .active,
+.icon-settings {
+    color: #fff;
 }
 
 .icon-settings {
@@ -603,6 +614,10 @@ input[name=cityname]:focus {
     margin-left: auto;
 }
 
+.fahrenheit:hover,
+.celsius:hover {
+    cursor: pointer;
+}
 
 .sidebar .slider{
     background: #000;

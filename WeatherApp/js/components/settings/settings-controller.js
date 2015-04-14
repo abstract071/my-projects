@@ -9,8 +9,9 @@ define([
 ], function (Vendor, SettingsView) {
     'use strict';
 
-    var /*$ = Vendor.$,*/
+    var $ = Vendor.$,
         _ = Vendor._,
+        emitter = Vendor.util.EventEmitter,
         Class = Vendor.util.Class,
         SettingsController;
 
@@ -27,7 +28,28 @@ define([
         },
         initialize: function () {
             this.settingsView = new SettingsView({ rootHolder: '.sidebar' });
+            //emitter.on('transformDegrees', this.transformDegrees, this);
         }
+        /*transformDegrees: function(event) {
+            //console.log(event.target);
+            if (!$(event.target).hasClass('active')) {
+                $('.degrees').removeClass('active');
+                $(event.target).addClass('active');
+
+
+                var dataAttrName = $('.bxslider > li.active').data('city-name');
+                console.log(dataAttrName);
+                var $neededSlides = $('[data-city-name="' + dataAttrName + '"]');
+                console.log($neededSlides.find('[data-celsius]').size());
+                console.time("Time changing temperature text");
+                $neededSlides.find('[data-celsius]').each(function() {
+                    $(this).text($(this).data($(event.target).data('identifier')));
+                });
+                console.timeEnd("Time changing temperature text");
+            }
+
+
+        }*/
         //collectElements: function () {
         //    this.$holder = $(this.options.rootHolder);
         //    this.$setBoard = $(this.tpl());

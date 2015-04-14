@@ -1,12 +1,7 @@
 /**
- * Created by Vlad on 10.01.2015.
+ * Created by Vlad on 28.01.2015.
  */
-define([
-    'vendor'
-    //'components/search/search-view'
-    //'utils/gallery/jquery.bxslider.min',
-    //'text!utils/gallery/jquery.bxslider.css'
-], function (Vendor/*, SearchView*/) {
+define(['vendor'], function (Vendor) {
     'use strict';
 
     var /*$ = Vendor.$,*/
@@ -34,9 +29,10 @@ define([
         },
         addCityData: function (weather) {
             try {
-                var filteredData = this.filterData(weather);
-                this.weatherDataArray.push(filteredData);
-                emitter.trigger('addCityData', filteredData);
+                console.log(weather);
+                //var filteredData = this.filterData(weather);
+                this.weatherDataArray.push(/*filteredData*/weather);
+                emitter.trigger('addCityData', /*filteredData*/weather);
             } catch (error) {
                 console.error("Wrong type of an object");
             }
@@ -59,8 +55,10 @@ define([
         },
         size: function () {
             return this.weatherDataArray.length;
+        },
+        toJSON: function() {
+            return this.weatherDataArray;
         }
-
 
     });
 

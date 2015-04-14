@@ -1,8 +1,8 @@
 <div class="options">
     <div class="description">
-        <span>&deg;C</span>
+        <span class="degrees celsius active" data-identifier="celsius">&deg;C</span>
         <span class="edge">|</span>
-        <span>&deg;F</span>
+        <span class="degrees fahrenheit" data-identifier="fahrenheit">&deg;F</span>
         <span class="icon-settings"></span>
     </div>
 

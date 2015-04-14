@@ -19,7 +19,7 @@ define([
                     $( "#options-days" ).val( ui.value );
                 },
                 stop: function() {
-                    console.log($('#options-days').val());
+                    //console.log($('#options-days').val());
                     //var $weekForecastItems = $('.bxslider > li.active .week-forecast li');
                     var $weekForecastBlocks = $('.bxslider .week-forecast');
                     //console.log($weekForecastBlocks);

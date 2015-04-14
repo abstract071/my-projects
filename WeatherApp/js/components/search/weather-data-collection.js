@@ -4,8 +4,7 @@
 define(['vendor'], function (Vendor) {
     'use strict';
 
-    var /*$ = Vendor.$,*/
-        _ = Vendor._,
+    var _ = Vendor._,
         emitter = Vendor.util.EventEmitter,
         Class = Vendor.util.Class,
         WeatherDataCollection;
@@ -18,9 +17,6 @@ define(['vendor'], function (Vendor) {
             this.weatherDataArray = [];
             this.initialize();
         },
-        //getCityData: function (index) {
-        //    return this.weatherDataArray[index];
-        //},
         initialize: function () {
             //this.searchView = new SearchView({ rootHolder: '#wrapper' });
         },
@@ -30,9 +26,8 @@ define(['vendor'], function (Vendor) {
         addCityData: function (weather) {
             try {
                 console.log(weather);
-                //var filteredData = this.filterData(weather);
-                this.weatherDataArray.push(/*filteredData*/weather);
-                emitter.trigger('addCityData', /*filteredData*/weather);
+                this.weatherDataArray.push(weather);
+                emitter.trigger('addCityData', weather);
             } catch (error) {
                 console.error("Wrong type of an object");
             }

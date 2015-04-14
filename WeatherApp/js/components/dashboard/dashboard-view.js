@@ -1,12 +1,8 @@
-define(/*'components/dashboard/dashboard-view', */[
+define([
     'vendor',
     'text!components/dashboard/dashboard.tpl',
-    //'utils/gallery/bxslider',
-    //'utils/sliders/slider.scrollbar',
     'utils/gallery/jquery.bxslider.min'
-    //'utils/gallery/jquery.bxslider.min',
-    //'text!utils/gallery/jquery.bxslider.css'
-], function (Vendor, dashboardTemplate/*, bxSlider, scrollbarSlider*/) {
+], function (Vendor, dashboardTemplate) {
     'use strict';
 
     var $ = Vendor.$,

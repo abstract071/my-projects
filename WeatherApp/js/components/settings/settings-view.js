@@ -6,8 +6,6 @@ define([
     'text!components/settings/settings.tpl',
     'utils/sliders/slider.range.days',
     'utils/sliders/slider.range.update'
-    //'utils/gallery/jquery.bxslider.min',
-    //'text!utils/gallery/jquery.bxslider.css'
 ], function (Vendor, settingsTemplate, daysRangeSlider, updateRangeSlider) {
     'use strict';
 

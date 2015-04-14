@@ -3,14 +3,10 @@
  */
 define([
     'vendor'
-    //'components/search/search-view'
-    //'utils/gallery/jquery.bxslider.min',
-    //'text!utils/gallery/jquery.bxslider.css'
-], function (Vendor/*, SearchView*/) {
+], function (Vendor) {
     'use strict';
 
-    var /*$ = Vendor.$,*/
-        _ = Vendor._,
+    var _ = Vendor._,
         emitter = Vendor.util.EventEmitter,
         Class = Vendor.util.Class,
         WeatherDataCollection;
@@ -23,11 +19,7 @@ define([
             this.weatherDataArray = [];
             this.initialize();
         },
-        //getCityData: function (index) {
-        //    return this.weatherDataArray[index];
-        //},
         initialize: function () {
-            //this.searchView = new SearchView({ rootHolder: '#wrapper' });
         },
         getCityData: function (cityName) {
             return _.find(this.weatherDataArray, { cityName: cityName });
@@ -43,7 +35,6 @@ define([
         },
         removeCityData: function (cityName) {
             _.remove(this.weatherDataArray, function(cityData) { return cityData.cityName === cityName; });
-            //console.log(this.weatherDataArray);
         },
         filterData: function(weatherData) {
             return _.assign({}, _.pick(weatherData, 'cityName', 'latitude', 'longitude', 'temperature', 'convertToCelsius'),
@@ -60,8 +51,6 @@ define([
         size: function () {
             return this.weatherDataArray.length;
         }
-
-
     });
 
     var singletonCollection = (function () {

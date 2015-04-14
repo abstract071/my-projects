@@ -4,8 +4,7 @@
 define(['vendor'], function (Vendor) {
     'use strict';
 
-    var /*$ = Vendor.$,*/
-        _ = Vendor._,
+    var _ = Vendor._,
         Class = Vendor.util.Class,
         CityWeather;
 
@@ -15,13 +14,9 @@ define(['vendor'], function (Vendor) {
         //},
         constructor: function (options) {
             _.assign(this, options);
-            //this.tpl = _.template(searchTemplate);
-            //BoardView.prototype = new Vendor.util.EventEmitter();
             this.initialize();
-            //this.render();
         },
         initialize: function () {
-            //this.searchView = new SearchView({ rootHolder: '#wrapper' });
         },
         convertToCelsius: function(fahrenheits) {
             return Math.round((fahrenheits - 32)/1.8);
@@ -34,8 +29,6 @@ define(['vendor'], function (Vendor) {
         //    this.$holder.append(this.tpl());
         //}
     });
-
-    //console.log();
 
     return CityWeather;
 });

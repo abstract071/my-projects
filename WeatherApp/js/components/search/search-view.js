@@ -3,12 +3,9 @@
  */
 define([
     'vendor',
-    /*'components/models/weather-data-collection',*/
     'text!components/search/search.tpl',
     'text!components/search/search-result.tpl'
-    //'utils/gallery/jquery.bxslider.min',
-    //'text!utils/gallery/jquery.bxslider.css'
-], function (Vendor/*, weatherDataCollection*/, searchWrapperTemplate, searchResultTemplate) {
+], function (Vendor, searchWrapperTemplate, searchResultTemplate) {
     'use strict';
 
     var $ = Vendor.$,
@@ -25,7 +22,6 @@ define([
             this.options = _.extend({}, this.defaultOptions, options);
             this.wrapperTpl = _.template(searchWrapperTemplate);
             this.searchResultTpl = _.template(searchResultTemplate);
-            //BoardView.prototype = new Vendor.util.EventEmitter();
             this.initialize();
             this.render();
             this.addEventListeners();
@@ -35,13 +31,10 @@ define([
         },
         collectElements: function () {
             this.$holder = $(this.options.rootHolder);
-            //this.$searchResultHolder = $(this.options.rootSearchResultHolder);
-            //this.$setBoard = $(this.tpl());
         },
         render: function (){
             this.$holder.append(this.wrapperTpl());
             this.$searchResultHolder = this.$holder.find(this.options.rootSearchResultHolder);
-            //this.renderSearchResult({ cityName: '' });
         },
         renderSearchResult: function (cityElement, isChecked){
 
@@ -51,9 +44,6 @@ define([
             this.$searchResultHolder.empty();
         },
         addEventListeners: function() {
-            //this.$holder.find('.icon-add').on('click', function(e) {
-            //    emitter.trigger('click', 'by me', 10, 'times');
-            //});
             $('input[name=cityname]').on('input', function() {
                 emitter.trigger('searchStateHasChanged');
             });

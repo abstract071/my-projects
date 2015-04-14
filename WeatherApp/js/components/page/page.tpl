@@ -6,7 +6,7 @@
             <time>10:19</time><span class="icon-refresh"></span>
             <h1><%- cityData.cityName.split(',')[0] %></h1>
             <h2>
-                <time>monday, november 3 ${ '=))' }</time>
+                <time>monday, november 3</time>
             </h2>
         </header>
         <div class="current-temperature icon-<%= cityData.icon %>">

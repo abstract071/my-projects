@@ -1,8 +1,5 @@
 <% var id = cityElement.cityName.replace(/\s+/g, '') %>
-<% //var has = false; %>
-<% //_(collection.weatherDataArray).forEach(function(cityData) {
-    //    if (cityData.cityName === cityName) { has = true } %>
-<%  //}); %>
+
 <li>
     <span class="city-weather icon-sunny"></span>
     <span class="city-temperature">32</span>

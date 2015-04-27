@@ -1,6 +1,0 @@
-This task is not done absolutely.
-
- There should be some logo with an image.
-
- Please go to the website epam.com and look how there made a logo.
- Then remake this task and report me by email.

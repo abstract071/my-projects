@@ -1,5 +1,0 @@
-// page init
-jQuery(function () {
-
-});
-

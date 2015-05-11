@@ -52,6 +52,8 @@ define([
         showPosition: function(position, self) {
             var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             var geocoderDeferred = GoogleGeoService.getAddressForGeolocationRequest(latLng);
+            console.log(position.coords.latitude);
+            console.log(position.coords.longitude);
             var forecastDeferred = ForecastIOService.getForecastIOResponse(position.coords.latitude, position.coords.longitude);
 
             $.when(geocoderDeferred, forecastDeferred).then(function(cityName, data) {
@@ -106,7 +108,10 @@ define([
                     var geocoderDeferred = GoogleGeoService.getCoordinatesForAutocompleteService(cityName);
 
                     var forecastDeferred = geocoderDeferred.then(function(LtdLng) {
-                        return ForecastIOService.getForecastIOResponse(LtdLng.k, LtdLng.D, cityName);
+                        //console.log(LtdLng);
+                        //console.log(LtdLng.A);
+                        //console.log(LtdLng.F);
+                        return ForecastIOService.getForecastIOResponse(LtdLng.A, LtdLng.F, cityName);
                     });
                     promises.push(forecastDeferred);
                 }

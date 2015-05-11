@@ -39,8 +39,8 @@ html, body {
 }
 
 #header {
-	position: relative;
-	display: table;
+	/*position: relative;*/
+	/*display: table;*/
 	width: 100%;
 	padding: 1.25em 1.5625em 0.9375em 1.875em;
 	box-sizing: border-box;
@@ -49,10 +49,17 @@ html, body {
 .header-wrapper {
 	display: table-cell;
 	vertical-align: middle;
+	height: 100%;
 }
 
 .wrapper-logo {
+	/*position: absolute;*/
 	float: left;
+	/*height: 100%;*/
+	display: table-cell;
+	vertical-align: middle;
+	/*top: 50%;*/
+	/*transform: translate(0, -50%);*/
 }
 
 .logo {
@@ -326,7 +333,8 @@ div[class^=navbar-] {
 @media screen and (min-width: 768px) {
 
 	#header {
-		padding: 1.5625em 5% 1.25em 5%;
+		padding: 0 5% 0 5%;
+		height: 6em;
 	}
 
 	.main-nav-mobile {
@@ -336,16 +344,19 @@ div[class^=navbar-] {
 	.main-nav {
 		display: block;
 		float: right;
+		height: 100%;
 	}
 
 	.main-nav ul {
 		list-style-type: none;
 		overflow: hidden;
+		height: 6em;
 	}
 
 	.main-nav li {
 		float: left;
 		margin-right: 2.125em;
+		height: 100%;
 	}
 
 	.main-nav li:last-child {
@@ -353,9 +364,20 @@ div[class^=navbar-] {
 	}
 
 	.main-nav a {
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
 		text-decoration: none;
 		color: rgb(108,108,108);
 		font-size: 1.25em;
+	}
+
+	.main-nav a:after {
+		content: "";
+		display: inline-block;
+		width: 1px;
+		height: 100%;
+		vertical-align: middle;
 	}
 
 	.banner {
@@ -527,7 +549,7 @@ div[class^=navbar-] {
 	}
 
 	#header {
-		padding: 1.5625em 8.75em 1.25em 6.5625em;
+		padding: 0 8.75em 0 6.5625em;
 	}
 
 	.banner-wrapper {

@@ -1,1 +1,1 @@
-If you wanna check this app, please, open it in WebStorm
+If you wanna check this app, please, visit this [link](https://weatherapptest.firebaseapp.com/)

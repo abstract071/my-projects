@@ -7,7 +7,7 @@ define(function() {
 
     function EmployeeCollection() {
 
-        var employeeCollection = this.employeeCollection;
+        var employeeCollection = [];
 
         this.getEmployee = function(index) {
             return employeeCollection[index];

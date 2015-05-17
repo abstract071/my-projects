@@ -8,7 +8,43 @@ define(function (require) {
     var createEmployee = require('./employeeFactory');
     var singletonCollection = require('./singletonCollection');
 
+    function initTextarea() {
+        document.getElementById("json").innerText =
+        '[{\n' +
+            '\t"type": "HourlySalaryEmployee",\n' +
+            '\t"salary": 10,\n' +
+            '\t"name": "Anna",\n' +
+            '\t"id": 1\n' +
+        '},\n' +
+        '{\n' +
+            '\t"type": "HourlySalaryEmployee",\n' +
+            '\t"salary": 8,\n' +
+            '\t"name": "Bob",\n' +
+            '\t"id": 2\n' +
+        '},\n' +
+        '{\n' +
+            '\t"type": "FixedSalaryEmployee",\n' +
+            '\t"salary": 8000,\n' +
+            '\t"name": "Dany",\n' +
+            '\t"id": 3\n' +
+        '},\n' +
+        '{\n' +
+            '\t"type": "FixedSalaryEmployee",\n' +
+            '\t"salary": 8000,\n' +
+            '\t"name": "Clara",\n' +
+            '\t"id": 4\n' +
+        '},\n' +
+        '{\n' +
+            '\t"type": "FixedSalaryEmployee",\n' +
+            '\t"salary": 1000,\n' +
+            '\t"name": "Egor",\n' +
+            '\t"id": 5\n' +
+        '}]';
+    }
+
     window.onload = function() {
+        initTextarea();
+
         document.getElementById("json-btn").addEventListener("click", getJSON, false);
         document.getElementById("getNames").addEventListener("click", getNames, false);
         document.getElementById("getIds").addEventListener("click", getIds, false);

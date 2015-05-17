@@ -6,7 +6,7 @@ define([
     'components/dashboard/dashboard-controller',
     'components/search/search-controller',
     'components/settings/settings-controller',
-    'components/models/city-weather'
+    'components/search/city-weather'
 ], function(Vendor, DashboardController, SearchController, SettingsController, CityWeather) {
     'use strict';
 
@@ -38,20 +38,14 @@ define([
 
 
             $('.sidebar-btn').on('click', function() {
-                $('.sidebar').stop().toggle('slide', { direction: 'right', easing: 'linear' }, 1300);
-                if (!$(this).hasClass('closed')) {
-                    $(this).animate({left: (($('.sidebar-wrapper').width() - $(this).position().left - $(this).width()) / parseFloat($(this).css('font-size'))) + 'em'}, {
-                        duration: 1000,
-                        easing: 'linear'
-                    });
-                    $(this).addClass('closed');
-                } else {
-                    $(this).removeClass('closed');
-                    $(this).delay(300).animate({left: (($('.sidebar-wrapper').width() - $(this).position().left - $(this).width()) / parseFloat($(this).css('font-size'))) + 'em'}, {
-                        duration: 1000,
-                        easing: 'linear'
-                    });
-                }
+                $('.sidebar').stop().toggle('slide', { direction: 'right', easing: 'linear' }, 700, function() {
+                    $('.open-sb-btn').fadeIn('slow');
+                });
+            });
+            $('.open-sb-btn').on('click', function() {
+                $('.open-sb-btn').fadeOut('fast', function() {
+                    $('.sidebar').stop().toggle('slide', { direction: 'right', easing: 'linear' }, 700);
+                });
             });
         });
     };

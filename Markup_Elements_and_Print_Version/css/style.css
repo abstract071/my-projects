@@ -737,3 +737,7 @@ aside > span {
 	bottom: -10px;
 	z-index: 10;
 }
+
+.contact-form .btn:hover {
+	cursor: pointer;
+}

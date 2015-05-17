@@ -447,18 +447,21 @@ CSS Grid
     padding: 2em 0;
 }
 
-.sidebar-btn {
-    position: absolute;
-    top: .5em;
-    left: 1em;
-    right: auto;
-    z-index: 1;
-}
-
-/*.sidebar-btn-opened {*/
+/*.sidebar-btn {*/
+    /*position: absolute;*/
+    /*top: .5em;*/
     /*left: 1em;*/
     /*right: auto;*/
+    /*z-index: 1;*/
 /*}*/
+
+.open-sb-btn {
+    display: none;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    z-index: 2;
+}
 
 .closed {
     left: auto;
@@ -467,7 +470,8 @@ CSS Grid
 
 .sidebar-btn,
 .add-btn,
-.delete-btn {
+.delete-btn,
+.open-sb-btn {
     font-size: 4em;
     background: transparent;
     margin: 0;
@@ -485,7 +489,8 @@ CSS Grid
 input[name=cityname] {
     border-radius: 25px;
     padding-left: 2.5em;
-    margin: 0 3.252% 0 17.0731%;
+    /*margin: 0 3.252% 0 17.0731%;*/
+    margin: 0 auto;
     border: none;
     background-color: #c1c4c8;
     -webkit-box-sizing: border-box;
